@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    min-width: 500px;
+    min-height: 500px;
+    background-color: antiquewhite;
+    margin: 2rem 3rem;
+}
+
+header {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+main {
+    font-size: 2rem;
+}
+
+img {
+    /* display: none; */
+    width: 20%;
+    height: 20%;
+}
