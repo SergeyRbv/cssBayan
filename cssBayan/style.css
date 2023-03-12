@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     position: static;
-    padding: 1rem 2rem;
+    padding: 3% 10%;
 }
 
 main input{
@@ -25,24 +25,15 @@ main input:checked + label > img {
     height: 20rem;
 }
 
-main input:checked +.icon{
-    width: 30px;
-    height: 30px;
+main input:checked + label .icon{
+    background-image: url(../cssBayan/assets/svg/arrdown.svg);
 }
 
 main input:checked + label>.string>.text>p{
     color: black;
 }
 
-main:hover .string .icon {
-    display: block;
-    transition: .5s;
-}
 
-main:hover .text {
-    color: black;
-    transition: .5s;
-}
 
 header {
     font-size: 2rem;
@@ -71,25 +62,16 @@ label {
     border: .1rem solid black;
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
-    /* padding-bottom: .5rem; */
     background-color: antiquewhite;
     border-radius: 1rem;
     padding: .5rem 1rem;
     box-sizing:border-box;
     width: 100%;
-}
-
-.point:hover img{
-    height: 20rem;
-}
-
-.point:hover .string .icon{
-    transform: rotate(-180deg);
+    
 }
 
 .text {
     display: flex;
-    white-space: nowrap;
     align-items: center;
     color: blue;
 }
@@ -104,19 +86,20 @@ label {
     margin-right: 1rem;   
 }
 
+.one, .two, .three, .four, .five {
+    background-image: url(../cssBayan/assets/svg/arr.svg);
+}
+
 .icon {
     width: 1.5rem;
     height: 1.5rem;
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
     display: none;
-    transition: rotate 0.3s;
+    /* opacity: 0; */
+    transition: 0.3s;
+    margin-left: 0.5rem;
 }
-
-.one, .two, .three, .four, .five {
-    background-image: url(../cssBayan/assets/svg/arrow.png);
-}
-
 
 img {
     width: 20rem;
@@ -124,64 +107,61 @@ img {
     transition: height 0.3s;
 }
 
-.acor-container {
-    margin: 20px 0;
+@media (hover:hover) {
+    main:hover .string .icon {
+        /* opacity: 1; */
+        display: block;
+        transition: .3s;
+    }
+    
+    main:hover .text {
+        color: black;
+        transition: .3s;
+    }
+    .point:hover img{
+        height: 20rem;
+    }
+    
+    .point:hover .string .icon{
+        background-image: url(../cssBayan/assets/svg/arrdown.svg);
+    }
 }
-.acor-container .acor-body {
-    width: calc(100% - 40px);
-    margin: 0 auto;
-    height: 0;
-    color: rgba(0, 0, 0, 0);
-    background-color: #BFE2FF;
-    line-height: 18px;
-    padding: 0 30px;
-    box-sizing: border-box;
-    transition: color 0.5s, padding 0.5s;
-    overflow: hidden;
-    font-family: Verdana, sans-serif; 
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
+
+
+@media (max-width: 820px) {
+    header {
+        font-size: 1.8rem;
+    }
+    main {
+        font-size: 1.3rem;
+        letter-spacing: normal;
+    }
+    main input:checked + label > img {
+        height: 15rem;
+    }
+    .number {
+        display: none;
+    }
+    .icon {
+        width: 1.1rem;
+        height: 1.1rem;
+        background-size: 1rem 1rem;
+        display: block;
+    }
+    img {
+        width: 15rem;
+    }
 }
-.acor-container .acor-body p {
-    margin: 0 0 10px;
-}
-.acor-container label {
-    cursor: pointer;
-    background-color: #337AB7;
-    display: block;
-    padding: 15px 20px;
-    width: 100%;
-    color: #BFE2FF;
-    font-weight: 300;
-    box-sizing: border-box;
-    z-index: 100;
-    font-family: Verdana, sans-serif;   
-    font-size: 18px;
-    margin: 0 0 5px;
-    transition: color .35s;
-}
-.acor-container label:hover {
-    color: #FFF;
-}
-.acor-container input{
-    display: none;
-}
-.acor-container label:before {
-    content: '\276F';
-    float: right;
-}
-.acor-container input:checked + label {
-    background-color: #285f8f;
-    color: #FFF;
-    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
-}
-.acor-container input:checked + label:before {
-    transition: transform .35s;
-    transform: rotate(90deg);
-}
-.acor-container input:checked + label + .acor-body {
-    height: auto;
-    margin-top: -5px;
-    color: #000;
-    padding: 20px 30px 10px;
+
+@media (max-width: 320px) {
+    header {
+        font-size: 1.3rem;
+    }
+    main {
+        font-size: 1.0rem;
+        
+    }
+    img {
+        width: 12rem;
+    }
 }
